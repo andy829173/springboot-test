@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:2014;databaseName=TEST;encrypt=false
+    username: sa
+    password: 1qaz@WSX
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+
+# 配置 SpringDoc OpenAPI
+springdoc:
+  api-docs:
+    enabled: true # 預設的
+    path: /api-docs # API 文件的路徑，預設的
+  swagger-ui:
+    enabled: true # 預設的
+    path: /swagger-ui.html # Swagger UI 界面的路徑，預設的
+

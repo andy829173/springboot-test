@@ -1,0 +1,3 @@
+spring:
+  profiles:
+    active: dev  # 默認激活的配置檔案
