@@ -2,6 +2,7 @@ package com.test.andy.springboottest.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -11,15 +12,16 @@ import java.time.LocalDate;
 public class ConsumerRecordDto {
     private String uuid;
 
-    @NotNull
+    @NotNull(message = "Name cannot be null")
+    @Size(min = 1, max = 10, message = "Name must be between 2 and 10 characters")
     @Schema(description = "消費名稱", example = "Andy")
     private String name;
 
-    @NotNull
+    @NotNull(message = "Price cannot be null")
     @Schema(description = "費用", example = "120")
-    private int price;
+    private Integer price;
 
-    @NotNull
+    @NotNull(message = "Time cannot be null")
     @Schema(description = "時間", example = "2024-01-10")
     private LocalDate time;
 
