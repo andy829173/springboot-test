@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class ConsumerController {
             @ApiResponse(responseCode = "500", description = "系統錯誤")
     })
     @PostMapping("/record")
-    public ResponseEntity<Boolean> createRecord(@RequestBody ConsumerRecordDto dto) {
+    public ResponseEntity<Boolean> createRecord(@Valid @RequestBody ConsumerRecordDto dto) {
         return ResponseEntity.ok(consumerService.createRecord(dto));
     }
 }
