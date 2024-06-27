@@ -16,6 +16,9 @@ public class ConsumerService {
     @Autowired
     ConsumerRepository consumerRepository;
 
+    @Autowired
+    EmailService emailService;
+
     public boolean createRecord(ConsumerRecordDto dto) {
         boolean result = false;
 
@@ -28,6 +31,9 @@ public class ConsumerService {
             record.setDetail(dto.getNote());
             consumerRepository.save(record);
             result = true;
+
+            // 異步發送郵件通知
+            emailService.sendOrderNotification(record.toString());
         } catch (Exception e) {
             log.info("createRecord error: {}", e.getMessage());
         }
