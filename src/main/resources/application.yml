@@ -15,7 +15,20 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
-
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com
 
 # 配置 SpringDoc OpenAPI
 springdoc:
@@ -25,3 +38,8 @@ springdoc:
   swagger-ui:
     enabled: true # 預設的
     path: /swagger-ui.html # Swagger UI 界面的路徑，預設的
+
+
+custom:
+  mail:
+    to: ${MAIL_TO}
