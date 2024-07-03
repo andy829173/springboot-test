@@ -33,7 +33,7 @@ public class ConsumerService {
             result = true;
 
             // 異步發送郵件通知
-            emailService.sendOrderNotification(record.toString());
+            emailService.sendOrderNotification("您有一筆新的訂單", "您有一筆新的訂單");
         } catch (Exception e) {
             log.info("createRecord error: {}", e.getMessage());
         }
