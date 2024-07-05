@@ -11,9 +11,9 @@ import java.time.Instant;
  */
 @Component
 public class MyTask {
-    @Scheduled(cron = "0 * * * * *", zone = "Asia/Taipei")
+    @Scheduled(cron = "0 0/10 * * * *", zone = "Asia/Taipei")
     public void everyMinutes() {
         Instant now = Instant.now();
-        System.out.println("every minutes / " + now.toString());
+        System.out.println("every 10 minutes / " + now.toString());
     }
 }

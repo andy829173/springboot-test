@@ -21,7 +21,6 @@ public class EmailService {
     @Value("${custom.mail.to}")
     private String to;
 
-    // 測試 TaskExecutor 用
     @Async
     public void sendOrderNotification(String subject, String content) {
         SimpleMailMessage message = new SimpleMailMessage();
