@@ -2,19 +2,18 @@ package com.test.andy.springboottest.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Data
 @Table(name = "CONSUMER_RECORD")
 public class ConsumerRecord {
     @Id
-    @Column(name = "uuid")
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-    private String uuid;
+    @GeneratedValue
+    @Column(name = "uuid", updatable = false, nullable = false)
+    private UUID uuid;
 
     @Column(name = "NAME")
     private String name;
@@ -31,4 +30,6 @@ public class ConsumerRecord {
     @Column(name = "DETAIL")
     private String detail;
 
+    @Column(name = "CREATE_DATE")
+    private LocalDate createDate;
 }

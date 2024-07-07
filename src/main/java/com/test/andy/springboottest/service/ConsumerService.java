@@ -26,9 +26,10 @@ public class ConsumerService {
             ConsumerRecord record = new ConsumerRecord();
             record.setName(dto.getName());
             record.setPrice(dto.getPrice());
-            record.setConsumerDate(LocalDate.now());
+            record.setConsumerDate(dto.getTime());
             record.setCategory(dto.getCategory());
             record.setDetail(dto.getNote());
+            record.setCreateDate(LocalDate.now());
             consumerRepository.save(record);
             result = true;
 
