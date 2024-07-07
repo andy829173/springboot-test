@@ -22,7 +22,7 @@ public class ConsumerRecordDto {
     private Integer price;
 
     @NotNull(message = "Time cannot be null")
-    @Schema(description = "時間", example = "2024-01-10")
+    @Schema(description = "消費時間", example = "2024-01-10")
     private LocalDate time;
 
     @Schema(description = "分類", example = "吃喝")
