@@ -1,4 +1,4 @@
-# SpringBoot 專案學習筆記
+# SpringBoot 學習筆記
 
 > 本專案只是為了 SpringBoot 練習使用
 
